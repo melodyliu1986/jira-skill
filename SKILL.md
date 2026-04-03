@@ -1,17 +1,17 @@
 ---
 name: jira-skill
-description: Interacts with Jira tickets on https://redhat.atlassian.net. Use when fetching, summarizing, or managing tickets.
+description: Interacts with Jira tickets on Atlassian. Use when fetching, summarizing, or managing tickets.
 ---
 
 # Jira Skill
 
-This skill allows Gemini CLI to interact with Jira issues at `https://redhat.atlassian.net`.
+This skill allows Gemini CLI to interact with Jira issues at your organization's Atlassian site.
 
 ## Prerequisites
 
 - **Authentication**: Set the following environment variables:
-  - `JIRA_URL`: Defaults to `https://redhat.atlassian.net`
-  - `JIRA_EMAIL`: Your Red Hat email address.
+  - `JIRA_URL`: The URL of your organization's Atlassian site.
+  - `JIRA_EMAIL`: Your email address.
   - `JIRA_API_TOKEN`: Your Jira API token.
 
 ## Tools

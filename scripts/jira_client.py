@@ -14,9 +14,9 @@ def get_secret_from_pass(path):
         return None
 
 # Priority: Environment Variables > 'pass' > Default
-JIRA_URL = os.getenv("JIRA_URL", "https://redhat.atlassian.net")
-JIRA_EMAIL = os.getenv("JIRA_EMAIL") or get_secret_from_pass("redhat/jira-email")
-JIRA_API_TOKEN = os.getenv("JIRA_API_TOKEN") or get_secret_from_pass("redhat/jira-token")
+JIRA_URL = os.getenv("JIRA_URL")
+JIRA_EMAIL = os.getenv("JIRA_EMAIL") or get_secret_from_pass("jira/email")
+JIRA_API_TOKEN = os.getenv("JIRA_API_TOKEN") or get_secret_from_pass("jira/token")
 
 def adf_to_markdown(node):
     """Recursively convert Jira ADF (Atlassian Document Format) to Markdown."""
@@ -48,8 +48,8 @@ def adf_to_markdown(node):
 
 def get_issue(issue_key):
     """Fetch all relevant fields from Jira issue."""
-    if not JIRA_EMAIL or not JIRA_API_TOKEN:
-        return {"error": "Missing credentials."}
+    if not JIRA_URL or not JIRA_EMAIL or not JIRA_API_TOKEN:
+        return {"error": "Missing credentials. Set JIRA_URL, JIRA_EMAIL, and JIRA_API_TOKEN (or store them in 'pass' as jira/email and jira/token)."}
     
     # We add expand=names to see what the custom fields actually represent
     api_endpoint = f"{JIRA_URL}/rest/api/3/issue/{issue_key}?expand=names"

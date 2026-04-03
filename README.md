@@ -1,6 +1,6 @@
 # Jira Skill for Gemini CLI
 
-This is a specialized skill for [Gemini CLI](https://github.com/google/gemini-cli) that allows the agent to interact with Jira tickets at `https://redhat.atlassian.net`.
+This is a specialized skill for [Gemini CLI](https://github.com/google/gemini-cli) that allows the agent to interact with Jira tickets at your organizations Atlassian site (e.g. `https://<your-org>.atlassian.net`).
 
 ## Features
 - **Fetch & Summarize**: Get clean, Markdown-formatted summaries of Jira issues.
@@ -14,8 +14,8 @@ This skill uses the **`pass`** (Unix password manager) to store and retrieve cre
 ### Setup Instructions
 1. **Store your credentials** in your local `pass` store:
    ```bash
-   echo "your-actual-api-token" | pass insert -e redhat/jira-token
-   echo "your-email@redhat.com" | pass insert -e redhat/jira-email
+   echo "your-actual-api-token" | pass insert -e jira/token
+   echo "your-email@example.com" | pass insert -e jira/email
    ```
 2. **Install the skill** in Gemini CLI:
    ```bash
