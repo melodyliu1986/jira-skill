@@ -28,6 +28,6 @@ This skill uses the **`pass`** (Unix password manager) to store and retrieve cre
    ```
 
 ## Usage
-- "Gemini, summarize GITOPS-8825"
-- "Gemini, check the status and reporter of GITOPS-8826"
-- "Gemini, add a comment to GITOPS-123 saying 'This is fixed in the latest PR'"
+- "Gemini, summarize PROJ-123"
+- "Gemini, check the status and reporter of PROJ-456"
+- "Gemini, add a comment to PROJ-789 saying 'This is fixed in the latest PR'"
